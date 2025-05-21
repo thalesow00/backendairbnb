@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Backendairbnb</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+    <nav>
+      <ul>
+        <li><%= link_to 'Accueil', root_path %></li>
+        <li><%= link_to 'Team', team_path %></li>
+        <li><%= link_to 'Contact', contact_path %></li>
+        <li><%= link_to 'Bienvenue', welcome_path('VotreNom') %></li> <!-- Remplacez 'VotreNom' par un nom par défaut si nécessaire -->
+      </ul>
+    </nav>
+  </header>
+
+  <%= yield %>
+    <%= yield %>
+  </body>
+</html>
+
