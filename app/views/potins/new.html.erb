@@ -1,0 +1,30 @@
+<h1>Créer un nouveau potin</h1>
+
+<%= form_with model: @potin, local: true do |form| %>
+  <% if @potin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@potin.errors.count, "erreur") %> empêchent la soumission :</h2>
+      <ul>
+        <% @potin.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div>
+    <%= form.submit "Créer le potin" %>
+  </div>
+<% end %>
+
+<%= link_to 'Retour à la liste des potins', root_path %>

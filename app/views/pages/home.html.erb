@@ -7,3 +7,15 @@
     </li>
   <% end %>
 </ul>
+
+<h1>Bienvenue sur notre super site de potins !</h1>
+
+<ul>
+  <% @potins.each do |potin| %>
+    <li>
+      <strong><%= potin.title %></strong> — par <%= potin.user.first_name %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Créer un nouveau potin', new_potin_path %>
